@@ -6,7 +6,7 @@ To execute this project:, you need:
 - Java 8+
 - Your prefer IDE or editor
 - Maven instaled
-- MySQL Workbench (You need create a table agenda)
+- MySQL Workbench (You need create a DB agenda and table contacts)
 
 ## About the project
 This project is a Agenda to save contacts. You can create, read, delete and update in MySQL database. A simple CRUD.
