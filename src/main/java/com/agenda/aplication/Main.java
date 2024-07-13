@@ -23,7 +23,9 @@ public class Main {
         contact2.setDateRegister(new Date());
         contact2.setId(3);
 
-        contactDAO.update(contact2);
+        // contactDAO.update(contact2);
+
+        contactDAO.deleteById(1);
 
         List<Contact> list = contactDAO.getContacts();
         for (Contact c : list) {
