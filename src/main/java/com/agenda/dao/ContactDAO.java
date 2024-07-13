@@ -87,5 +87,36 @@ public class ContactDAO {
 
         return contacts;
     }
-    
+
+    public void update(Contact contact){
+        String sql = "UPDATE contacts SET name = ?, age = ?, dateRegister = ? WHERE id = ?";
+
+        Connection conn = null;
+        PreparedStatement pstm = null;
+
+        try {
+            conn = ConnectionFactory.createConnectionToMySQL();
+
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, contact.getName());
+            pstm.setInt(2, contact.getAge());
+            pstm.setDate(3, new Date(contact.getDateRegister().getTime()));
+            pstm.setInt(4,contact.getId());
+            pstm.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try{
+                if (pstm != null) {
+                    pstm.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

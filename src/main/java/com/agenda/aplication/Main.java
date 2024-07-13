@@ -11,11 +11,19 @@ public class Main {
         ContactDAO contactDAO = new ContactDAO();
 
         Contact contact1 = new Contact();
-        contact1.setName("Neymá Junio");
-        contact1.setAge(32);
+        contact1.setName("João");
+        contact1.setAge(15);
         contact1.setDateRegister(new Date());
 
-        contactDAO.save(contact1);
+        //contactDAO.save(contact1);
+
+        Contact contact2 = new Contact();
+        contact2.setName("Francisco");
+        contact2.setAge(55);
+        contact2.setDateRegister(new Date());
+        contact2.setId(3);
+
+        contactDAO.update(contact2);
 
         List<Contact> list = contactDAO.getContacts();
         for (Contact c : list) {
