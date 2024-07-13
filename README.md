@@ -1,4 +1,4 @@
-# crud com Java
+# crud with Java
 A simple CRUD project in Java, using JDBC and MySQL.
 
 ## Getting started
